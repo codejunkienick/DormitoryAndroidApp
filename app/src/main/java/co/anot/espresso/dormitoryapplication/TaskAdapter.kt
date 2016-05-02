@@ -11,7 +11,7 @@ class TaskAdapter(val taskList: MutableList<Task>) : RecyclerView.Adapter<TaskAd
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
         val taskNameView = view.taskName
-        //val roomMateView = view.roommate
+        val roomMateView = view.taskRoomMate
     }
     override fun getItemCount(): Int {
         return taskList.size
@@ -20,7 +20,7 @@ class TaskAdapter(val taskList: MutableList<Task>) : RecyclerView.Adapter<TaskAd
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
         val task = taskList.get(position)
         holder?.taskNameView?.text = task.taskName
-       // holder?.roomMateView?.text = task.roommate.name
+        holder?.roomMateView?.text = task.roommate.name
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder? {

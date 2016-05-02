@@ -5,16 +5,21 @@ import android.content.Intent
 import android.os.Bundle
 import org.jetbrains.anko.*
 class AddTaskActivity : Activity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         verticalLayout {
           val taskRoommate = editText {
             hint = "Roommate Name"
+          }.lparams {
+              setMargins(16, 16, 16, 0)
+              width = matchParent
           }
           val taskNameInput = editText {
             id = R.id.taskName
             hint = "Task name"
+          }.lparams {
+              setMargins(16, 16, 16, 0)
+              width = matchParent
           }
           button("Add") {
             onClick {
@@ -24,6 +29,9 @@ class AddTaskActivity : Activity() {
               setResult(Activity.RESULT_OK, output)
               finish()
             }
+          }.lparams {
+              gravity = right
+              setMargins(8, 16, 8, 0)
           }
         }
     }

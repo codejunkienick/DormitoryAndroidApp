@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                 taskListView.adapter.notifyDataSetChanged()
             }
         }
-
     }
 
     override fun onBackPressed() {
